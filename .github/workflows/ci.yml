@@ -28,3 +28,11 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - run: echo "Building application"
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment: staging
+    steps:
+      - run: echo "Deploying to staging"
+
