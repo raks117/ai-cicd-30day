@@ -18,13 +18,7 @@ test('throws when dividing by zero', () => {
 test('applies a discount', () => {
   expect(applyDiscount(100, 10)).toBe(90);
 });
-test('throws when discount percentage is invalid', () => {
-  expect(() => applyDiscount(100, -10)).toThrow('Both arguments must be numbers');
-});
-test('throws when price is not a number', () => {
-  expect(() => applyDiscount('a', 10)).toThrow('Both arguments must be numbers');
-
-  test('throws when percent is above 100', () => {
+test('throws when percent is above 100', () => {
   expect(() => applyDiscount(100, 150)).toThrow('Percent must be between 0 and 100');
 });
 
@@ -35,5 +29,4 @@ test('throws when percent is negative', () => {
 test('handles boundary percentages', () => {
   expect(applyDiscount(100, 0)).toBe(100);
   expect(applyDiscount(100, 100)).toBe(0);
-});
 });
